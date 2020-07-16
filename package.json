@@ -4,9 +4,11 @@
   "description": "Example PKCE client website for amplify-identity-broker",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "aws-amplify": "^3.0.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

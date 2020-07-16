@@ -25,6 +25,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 3",
                 "color": "#F00",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "baseUrl": "https://master.dv7odw7xb73ou.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
@@ -32,6 +33,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 4",
                 "color": "#0F0",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
             };
                 break;
@@ -44,6 +46,7 @@ module.exports = function override(config, env) {
             "websiteName": "Website local",
             "color": "#FF0",
             "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+            "baseUrl": "https://localhost:3000",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"
         };
     }
