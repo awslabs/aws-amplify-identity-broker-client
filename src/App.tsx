@@ -96,6 +96,7 @@ class App extends React.Component<{}, AppState> {
   render = () => {
     return (
       <div style={containerStyle}>
+        <h1>{Config.websiteName}</h1>
         <AmplifyButton onClick={this.login}>{this.state.text}</AmplifyButton>
       </div>
     )
