@@ -57,7 +57,7 @@ module.exports = function override(config, env) {
                 "color": "#00F",
                 "flow": "PKCE",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.d1tytm4h3ai9d2.amplifyapp.com",
+                "baseUrl": "https://master.dgt79y8acfq6b.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
@@ -66,7 +66,7 @@ module.exports = function override(config, env) {
                 "color": "#0FF",
                 "flow": "PKCE",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
+                "baseUrl": "https://master.d3uilst39vffn1.amplifyapp.com",
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
