@@ -35,19 +35,39 @@ module.exports = function override(config, env) {
         console.log("This is an AWS build");
         switch (AMPLIFY_ENV) {
             case "clientone": localConfig = {
-                "websiteName": "Website 3",
+                "websiteName": "Website 1",
                 "color": "#F00",
+                "flow": "implicit",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dv7odw7xb73ou.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
             case "clienttwo": localConfig = {
-                "websiteName": "Website 4",
+                "websiteName": "Website 2",
                 "color": "#0F0",
+                "flow": "implicit",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
+            };
+                break;
+            case "clientthre": localConfig = {
+                "websiteName": "Website 3",
+                "color": "#00F",
+                "flow": "PKCE",
+                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "baseUrl": "https://master.d1tytm4h3ai9d2.amplifyapp.com",
+                "clientId": "3ff74008faf102ec0016f99fe311269a"
+            };
+                break;
+            case "clientfour": localConfig = {
+                "websiteName": "Website 4",
+                "color": "#0FF",
+                "flow": "PKCE",
+                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
+                "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
             default:
