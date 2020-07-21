@@ -38,6 +38,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 1",
                 "color": "#F00",
                 "flow": "implicit",
+                "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dv7odw7xb73ou.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
@@ -47,6 +48,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 2",
                 "color": "#0F0",
                 "flow": "implicit",
+                "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
@@ -56,6 +58,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 3",
                 "color": "#00F",
                 "flow": "PKCE",
+                "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dgt79y8acfq6b.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
@@ -65,9 +68,17 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 4",
                 "color": "#0FF",
                 "flow": "PKCE",
+                "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.d3uilst39vffn1.amplifyapp.com",
                 "clientId": "e91483525266cff1675e1c719999cc2b"
+            };
+                break;
+            case "liamaws": localConfig = {
+                "websiteName": "Website 4",
+                "responseType": "code",
+                "brokerUrl": "https://d39rd8fyh5azgs.cloudfront.net",
+                "clientId": "liam123"
             };
                 break;
             default:
@@ -78,6 +89,7 @@ module.exports = function override(config, env) {
         localConfig = {
             "websiteName": "Website local",
             "color": "#FF0",
+            "responseType": "code",
             "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
             "baseUrl": "https://localhost:3000",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"

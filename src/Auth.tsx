@@ -13,6 +13,8 @@ permissions and limitations under the License. */
 
 import jwt_decode from 'jwt-decode';
 import crypto from "crypto";
+// THIS LINE HAS TO BE AT THE END OF IMPORTS:
+var Config = require("Config");
 
 function base64URLEncode(buffer: Buffer): string {
     return buffer.toString("base64")
@@ -34,10 +36,10 @@ class Auth {
 
     constructor() {
         this.settings = {
-            idBrokerUrl: 'https://d39rd8fyh5azgs.cloudfront.net',
-            clientID: 'local',
+            idBrokerUrl: Config.brokerUrl,
+            clientID: Config.clientId,
             redirectUri: window.location.origin + '/callback',
-            responseType: 'code' // code or id_token
+            responseType: Config.responseType // code or id_token
         };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
