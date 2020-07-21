@@ -23,7 +23,7 @@ class HomePage extends React.Component<any> {
             return (
                 <div className="jumbotron">
                     <h1 className="display-4">Congratulations!</h1>
-                    <p className="lead">You have succesfully logged in using the PKCE flow</p>
+                    <p className="lead">You have succesfully logged in using the {Config.flow} flow</p>
                     <p className="lead">
                         <a className="btn btn-primary btn-lg" href="https://github.com/xavierraffin/amplify-identity-broker" role="button">See the project on GitHub</a>
                     </p>

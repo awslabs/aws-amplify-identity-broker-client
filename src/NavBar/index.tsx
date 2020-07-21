@@ -28,10 +28,11 @@ class NavBar extends React.Component<any> {
     };
 
     render() {
+        let cssClass = "navbar navbar-dark " + Config.colorclass + " fixed-top";
         return (
-            < nav className="navbar navbar-dark bg-primary fixed-top" >
+            < nav className={cssClass} >
                 <Link className="navbar-brand" to="/">
-                    Sample PKCE Client
+                    {Config.websiteName} - sample {Config.flow} client
       </Link>
                 {
                     !authClient.isLoggedIn() &&

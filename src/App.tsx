@@ -16,6 +16,7 @@ import Homepage from "./HomePage";
 import Callback from "./Callback";
 import NavBar from "./NavBar";
 import { Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 // THIS LINE HAS TO BE AT THE END OF IMPORTS:
 var Config = require("Config");
 
@@ -27,6 +28,9 @@ class App extends React.Component<{}, AppState> {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>{Config.websiteName} - sample {Config.flow} client</title>
+        </Helmet>
         <NavBar />
         <Route exact path='/' component={Homepage} />
         <Route exact path='/callback' component={Callback} />

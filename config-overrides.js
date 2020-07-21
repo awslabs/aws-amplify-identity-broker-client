@@ -36,7 +36,7 @@ module.exports = function override(config, env) {
         switch (AMPLIFY_ENV) {
             case "clientone": localConfig = {
                 "websiteName": "Website 1",
-                "color": "#F00",
+                "colorclass": "color1",
                 "flow": "implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
@@ -46,7 +46,7 @@ module.exports = function override(config, env) {
                 break;
             case "clienttwo": localConfig = {
                 "websiteName": "Website 2",
-                "color": "#0F0",
+                "colorclass": "color2",
                 "flow": "implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
@@ -56,7 +56,7 @@ module.exports = function override(config, env) {
                 break;
             case "clientthre": localConfig = {
                 "websiteName": "Website 3",
-                "color": "#00F",
+                "colorclass": "color3",
                 "flow": "PKCE",
                 "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
@@ -66,7 +66,7 @@ module.exports = function override(config, env) {
                 break;
             case "clientfour": localConfig = {
                 "websiteName": "Website 4",
-                "color": "#0FF",
+                "colorclass": "color4",
                 "flow": "PKCE",
                 "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
@@ -75,7 +75,9 @@ module.exports = function override(config, env) {
             };
                 break;
             case "liamaws": localConfig = {
-                "websiteName": "Website 4",
+                "websiteName": "Website Liam",
+                "colorclass": "color4",
+                "flow": "PKCE",
                 "responseType": "code",
                 "brokerUrl": "https://d39rd8fyh5azgs.cloudfront.net",
                 "clientId": "liam123"
@@ -88,7 +90,8 @@ module.exports = function override(config, env) {
     } else { // Local developement settings
         localConfig = {
             "websiteName": "Website local",
-            "color": "#FF0",
+            "colorclass": "color4",
+            "flow": "PKCE",
             "responseType": "code",
             "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
             "baseUrl": "https://localhost:3000",
