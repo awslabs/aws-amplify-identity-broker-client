@@ -11,15 +11,24 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing 
 permissions and limitations under the License. */
 
-import crypto from "crypto";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { RouteComponentProps } from "react-router";
+import authClient from '../Auth';
 
-export function base64URLEncode(buffer: Buffer): string {
-    return buffer.toString("base64")
-        .replace(/\+/g, "-")
-        .replace(/\//g, "_")
-        .replace(/=/g, "");
+var Config = require("Config");
+
+class Callback extends React.Component<any> {
+    async componentDidMount() {
+        await authClient.handleAuth();
+        this.props.history.replace('/');
+    }
+
+    render() {
+        return (
+            <p>Logging In...</p>
+        );
+    }
 }
 
-export function sha256(str: string): Buffer {
-    return crypto.createHash("sha256").update(str).digest();
-}
+export default withRouter(Callback);

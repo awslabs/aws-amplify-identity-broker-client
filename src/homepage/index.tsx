@@ -11,19 +11,38 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 express or implied. See the License for the specific language governing 
 permissions and limitations under the License. */
 
-import React, { Component } from "react";
-// THIS LINE HAS TO BE AT THE END OF IMPORTS:
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { RouteComponentProps } from "react-router";
+import authClient from '../Auth';
+
 var Config = require("Config");
 
-class HomePage extends Component {
-
+class HomePage extends React.Component<any> {
     render() {
-        return (
-            <React.Fragment>
-                Homepage of {Config.websiteName}
-            </React.Fragment>
-        )
+        if (authClient.isLoggedIn()) {
+            return (
+                <div className="jumbotron">
+                    <h1 className="display-4">Congratulations!</h1>
+                    <p className="lead">You have succesfully logged in using the PKCE flow</p>
+                    <p className="lead">
+                        <a className="btn btn-primary btn-lg" href="https://github.com/xavierraffin/amplify-identity-broker" role="button">See the project on GitHub</a>
+                    </p>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="jumbotron">
+                    <h1 className="display-4">Amplify Identity Broker Sample Client</h1>
+                    <p className="lead">This is a sample client for the AWS Amplify Identity Broker Project</p>
+                    <p className="lead">
+                        <a className="btn btn-primary btn-lg" href="https://github.com/xavierraffin/amplify-identity-broker" role="button">See the project on GitHub</a>
+                    </p>
+                </div>
+            );
+        }
     }
 }
 
-export default HomePage;
+export default withRouter(HomePage);
