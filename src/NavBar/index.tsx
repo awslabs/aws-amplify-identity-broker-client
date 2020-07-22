@@ -18,10 +18,6 @@ import authClient from '../Auth';
 var Config = require("Config");
 
 class NavBar extends React.Component<any> {
-    constructor(props: any) {
-        super(props);
-    }
-
     logout = () => {
         authClient.logout();
         this.props.history.replace('/');
@@ -32,7 +28,7 @@ class NavBar extends React.Component<any> {
         return (
             < nav className={cssClass} >
                 <Link className="navbar-brand" to="/">
-                    {Config.websiteName} - sample {Config.flow} client
+                    {Config.websiteName} - Sample {Config.flow} Client
       </Link>
                 {
                     !authClient.isLoggedIn() &&

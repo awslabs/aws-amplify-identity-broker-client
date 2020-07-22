@@ -18,6 +18,11 @@ import authClient from '../Auth';
 var Config = require("Config");
 
 class HomePage extends React.Component<any> {
+    async componentDidMount() {
+        await authClient.handleAuth();
+        this.props.history.replace('/');
+    }
+
     render() {
         if (authClient.isLoggedIn()) {
             return (

@@ -38,7 +38,7 @@ class Auth {
         this.settings = {
             idBrokerUrl: Config.brokerUrl,
             clientID: Config.clientId,
-            redirectUri: window.location.origin + '/callback',
+            redirectUri: window.location.origin,
             responseType: Config.responseType // code or id_token
         };
         this.login = this.login.bind(this);

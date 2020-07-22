@@ -13,7 +13,6 @@ permissions and limitations under the License. */
 
 import React from "react";
 import Homepage from "./HomePage";
-import Callback from "./Callback";
 import NavBar from "./NavBar";
 import { Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -33,7 +32,6 @@ class App extends React.Component<{}, AppState> {
         </Helmet>
         <NavBar />
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/callback' component={Callback} />
       </div>
     );
   }
