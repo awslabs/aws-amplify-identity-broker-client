@@ -37,7 +37,7 @@ module.exports = function override(config, env) {
             case "clientone": localConfig = {
                 "websiteName": "Website 1",
                 "colorclass": "color1",
-                "flow": "implicit",
+                "flow": "Implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dv7odw7xb73ou.amplifyapp.com",
@@ -47,7 +47,7 @@ module.exports = function override(config, env) {
             case "clienttwo": localConfig = {
                 "websiteName": "Website 2",
                 "colorclass": "color2",
-                "flow": "implicit",
+                "flow": "Implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
                 "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
@@ -77,8 +77,8 @@ module.exports = function override(config, env) {
             case "liamaws": localConfig = {
                 "websiteName": "Website Liam",
                 "colorclass": "color4",
-                "flow": "PKCE",
-                "responseType": "code",
+                "flow": "Implicit",
+                "responseType": "id_token",
                 "brokerUrl": "https://d39rd8fyh5azgs.cloudfront.net",
                 "clientId": "liam123"
             };
@@ -89,7 +89,7 @@ module.exports = function override(config, env) {
         }
     } else { // Local developement settings
         localConfig = {
-            "websiteName": "Website local",
+            "websiteName": "Website Local",
             "colorclass": "color4",
             "flow": "PKCE",
             "responseType": "code",
