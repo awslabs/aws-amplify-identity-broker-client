@@ -37,7 +37,7 @@ class NavBar extends React.Component<any> {
                 {
                     authClient.isLoggedIn() &&
                     < div >
-                        <label className="mr-2 text-white">Your are logged in as: {authClient.getUserInfo().email}</label>
+                        <label className="mr-2 text-white">You are logged in as: {authClient.getUserInfo().email}</label>
                         <button className="btn btn-dark" onClick={() => { this.logout() }}>Log Out</button>
                     </div >
                 }
