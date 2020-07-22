@@ -40,7 +40,6 @@ module.exports = function override(config, env) {
                 "flow": "Implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.dv7odw7xb73ou.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
@@ -50,7 +49,6 @@ module.exports = function override(config, env) {
                 "flow": "Implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.dvj34ijv8eg6m.amplifyapp.com",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
             };
                 break;
@@ -60,7 +58,6 @@ module.exports = function override(config, env) {
                 "flow": "PKCE",
                 "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.dgt79y8acfq6b.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
@@ -70,17 +67,16 @@ module.exports = function override(config, env) {
                 "flow": "PKCE",
                 "responseType": "code",
                 "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
-                "baseUrl": "https://master.d3uilst39vffn1.amplifyapp.com",
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
             case "liamaws": localConfig = {
                 "websiteName": "Website Liam",
-                "colorclass": "color4",
+                "colorclass": "color1",
                 "flow": "Implicit",
                 "responseType": "id_token",
                 "brokerUrl": "https://d39rd8fyh5azgs.cloudfront.net",
-                "clientId": "liam123"
+                "clientId": "liamaws"
             };
                 break;
             default:

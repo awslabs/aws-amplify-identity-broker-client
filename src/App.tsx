@@ -28,7 +28,7 @@ class App extends React.Component<{}, AppState> {
     return (
       <div>
         <Helmet>
-          <title>{Config.websiteName} - sample {Config.flow} client</title>
+          <title>{Config.websiteName} - Sample {Config.flow} Client</title>
         </Helmet>
         <NavBar />
         <Route exact path='/' component={Homepage} />
