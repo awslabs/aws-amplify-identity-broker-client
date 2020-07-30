@@ -75,7 +75,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d39rd8fyh5azgs.cloudfront.net",
+                "brokerUrl": "https://d3aj1eqboorjif.cloudfront.net",
                 "clientId": "liamaws"
             };
                 break;
@@ -87,9 +87,9 @@ module.exports = function override(config, env) {
         localConfig = {
             "websiteName": "Website Local",
             "colorclass": "color4",
-            "flow": "PKCE",
-            "responseType": "code",
-            "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+            "flow": "Implicit",
+            "responseType": "id_token",
+            "brokerUrl": "https://d3aj1eqboorjif.cloudfront.net",
             "baseUrl": "https://localhost:3000",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"
         };

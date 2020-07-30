@@ -133,7 +133,19 @@ class Auth {
             localStorage.setItem(`accessToken`, tokenSet.access_token);
         }
         else {
-            return;
+            let urlValues = window.location.hash.substr(1);
+            let urlKeyPairs = urlValues.split('&');
+            let tokens: { [item: string]: string; } = {};
+            urlKeyPairs.forEach(function (item, index) {
+                let pair = item.split('=')
+                tokens[pair[0]] = pair[1]
+            });
+            if (tokens['id_token'] && tokens['access_token']) {
+                idToken = tokens['id_token'];
+            }
+            else {
+                return;
+            }
         }
         var idTokenDecoded = jwt_decode(idToken);
         this.idToken = idToken;
