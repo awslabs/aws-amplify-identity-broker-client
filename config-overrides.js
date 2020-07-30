@@ -39,7 +39,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
@@ -48,7 +48,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color2",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
             };
                 break;
@@ -57,7 +57,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color3",
                 "flow": "PKCE",
                 "responseType": "code",
-                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
@@ -66,7 +66,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color4",
                 "flow": "PKCE",
                 "responseType": "code",
-                "brokerUrl": "https://d23vbzcww6xd16.cloudfront.net",
+                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
