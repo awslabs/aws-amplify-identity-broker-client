@@ -1,6 +1,6 @@
 # Amplify Identity Broker PKCE client example
 
-This repository is an example of client website of the [Amplify Identity Broker](https://github.com/xavierraffin/amplify-identity-broker).
+This repository is an example of client website of the [Amplify Identity Broker](https://github.com/awslabs/amplify-identity-broker).
 
 This is a website that authenticate against the broker and use it as his SSO system.
 
