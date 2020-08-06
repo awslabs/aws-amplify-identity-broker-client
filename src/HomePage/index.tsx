@@ -31,7 +31,7 @@ class HomePage extends React.Component<any> {
                     <h1 className="display-4">Congratulations!</h1>
                     <p className="lead">You have succesfully logged in</p>
                     <p className="lead">
-                        <a className={cssClass} href="https://github.com/xavierraffin/amplify-identity-broker" role="button">See the project on GitHub</a>
+                        <a className={cssClass} href="https://github.com/awslabs/amplify-identity-broker" role="button">See the project on GitHub</a>
                     </p>
                 </div>
             );
@@ -42,7 +42,7 @@ class HomePage extends React.Component<any> {
                     <h1 className="display-4">Amplify Identity Broker Sample Client</h1>
                     <p className="lead">This is a sample client for the AWS Amplify Identity Broker Project</p>
                     <p className="lead">
-                        <a className={cssClass} href="https://github.com/xavierraffin/amplify-identity-broker" role="button">See the project on GitHub</a>
+                        <a className={cssClass} href="https://github.com/awslabs/amplify-identity-broker" role="button">See the project on GitHub</a>
                     </p>
                 </div>
             );
