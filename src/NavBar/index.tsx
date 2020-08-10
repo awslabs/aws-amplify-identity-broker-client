@@ -32,12 +32,13 @@ class NavBar extends React.Component<any> {
       </Link>
                 {
                     !authClient.isLoggedIn() &&
-                    < button className="btn btn-dark" onClick={authClient.login}>Log In</button>
+                    < button className="btn btn-dark" onClick={() => { authClient.login() }}>Log In</button>
                 }
                 {
                     authClient.isLoggedIn() &&
                     < div >
                         <label className="mr-2 text-white">You are logged in as: {authClient.getUserInfo().email}</label>
+                        <button className="btn btn-link" onClick={() => { authClient.login("/logout") }}>Switch User</button>&nbsp;&nbsp;
                         <button className="btn btn-dark" onClick={() => { this.logout() }}>Log Out</button>
                     </div >
                 }
