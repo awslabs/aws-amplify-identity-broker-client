@@ -86,7 +86,7 @@ module.exports = function override(config, env) {
     } else { // Local developement settings
         localConfig = {
             "websiteName": "Website Local",
-            "colorclass": "color4",
+            "colorclass": "color1",
             "flow": "Implicit",
             "responseType": "id_token",
             "brokerUrl": "https://d3aj1eqboorjif.cloudfront.net",

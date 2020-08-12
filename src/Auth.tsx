@@ -67,8 +67,8 @@ class Auth {
         }
     }
 
-    login() {
-        const authorizationEndpointUrl = new URL(this.settings.idBrokerUrl + '/oauth2/authorize');
+    login(endpoint = "/oauth2/authorize") {
+        const authorizationEndpointUrl = new URL(this.settings.idBrokerUrl + endpoint);
 
         if (this.settings.responseType === 'id_token') {
             authorizationEndpointUrl.search = new URLSearchParams({
@@ -100,6 +100,12 @@ class Auth {
         this.loggedin = null;
         localStorage.removeItem('idToken');
         localStorage.removeItem('accessToken');
+        var logoutEndpointUrl = new URL(this.settings.idBrokerUrl + '/logout');
+        logoutEndpointUrl.search = new URLSearchParams({
+            logout_uri: this.settings.redirectUri,
+            client_id: this.settings.clientID,
+        }).toString();
+        window.location.assign(logoutEndpointUrl.href);
     }
 
     async handleAuth() {
