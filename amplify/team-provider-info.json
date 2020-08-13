@@ -63,5 +63,18 @@
             "StackId": "arn:aws:cloudformation:us-east-1:386310383721:stack/amplify-brokerpkceclient-liamaws-101830/0e790270-cb5d-11ea-b873-0e763951b664",
             "AmplifyAppId": "d4w06rujwwzz8"
         }
+    },
+    "clientliam": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-brokerpkceclient-clientliam-105354-authRole",
+            "UnauthRoleArn": "arn:aws:iam::386310383721:role/amplify-brokerpkceclient-clientliam-105354-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::386310383721:role/amplify-brokerpkceclient-clientliam-105354-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-brokerpkceclient-clientliam-105354-deployment",
+            "UnauthRoleName": "amplify-brokerpkceclient-clientliam-105354-unauthRole",
+            "StackName": "amplify-brokerpkceclient-clientliam-105354",
+            "StackId": "arn:aws:cloudformation:us-east-1:386310383721:stack/amplify-brokerpkceclient-clientliam-105354/cfc41360-dd74-11ea-b57b-0afe492705d7",
+            "AmplifyAppId": "d4w06rujwwzz8"
+        }
     }
 }
