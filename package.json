@@ -1,7 +1,7 @@
 {
-  "name": "amplify-identity-broker-pkce-client",
+  "name": "aws-amplify-identity-broker-client",
   "version": "1.0.0",
-  "description": "Example PKCE client website for amplify-identity-broker",
+  "description": "Example client website for aws-amplify-identity-broker",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.3",

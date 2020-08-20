@@ -1,4 +1,4 @@
-# Amplify Identity Broker PKCE client example
+# Amplify Identity Broker client example
 
 This repository is an example of client website of the [Amplify Identity Broker](https://github.com/awslabs/aws-amplify-identity-broker).
 
