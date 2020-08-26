@@ -13,6 +13,10 @@ This repository has 4 running live demos:
 * Website 3 (PKCE flow) :  https://master.dgt79y8acfq6b.amplifyapp.com 
 * Website 4 (PKCE flow) :  https://master.d3uilst39vffn1.amplifyapp.com 
 
+## How to write a client
+
+In addition to the current repository you can find all the documentation needed to create a client application or website [here](https://github.com/awslabs/aws-amplify-identity-broker/blob/master/Documentation/ClientDeveloperDocumentation.md)
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
