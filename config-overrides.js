@@ -1,15 +1,11 @@
-/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- 
-Licensed under the Apache License, Version 2.0 (the "License").
-You may not use this file except in compliance with the License.
-A copy of the License is located at
- 
-    http://www.apache.org/licenses/LICENSE-2.0
- 
-or in the "license" file accompanying this file. This file is distributed 
-on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
-express or implied. See the License for the specific language governing 
-permissions and limitations under the License. */
+/*
+  * Copyright Amazon.com, Inc. and its affiliates. All Rights Reserved.
+  * SPDX-License-Identifier: MIT
+  *
+  * Licensed under the MIT License. See the LICENSE accompanying this file
+  * for the specific language governing permissions and limitations under
+  * the License.
+  */
 
 var amplifyMeta = {};
 const fs = require("fs");
@@ -39,7 +35,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
+                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
@@ -48,7 +44,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color2",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
+                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "8d5dc691a99f23a6a9b788d618871702"
             };
                 break;
@@ -57,7 +53,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color3",
                 "flow": "PKCE",
                 "responseType": "code",
-                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
+                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
@@ -66,7 +62,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color4",
                 "flow": "PKCE",
                 "responseType": "code",
-                "brokerUrl": "https://d2zxvlukxu4lhp.cloudfront.net",
+                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
