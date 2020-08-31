@@ -125,6 +125,7 @@ class Auth {
             const tokenSet = await fetch(this.settings.idBrokerUrl + '/oauth2/token', {
                 method: 'POST',
                 body: new URLSearchParams({
+                    grant_type: "authorization_code",
                     client_id: this.settings.clientID,
                     redirect_uri: this.settings.redirectUri,
                     code_verifier: code_verifier,
