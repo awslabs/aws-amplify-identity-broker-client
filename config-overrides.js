@@ -69,10 +69,19 @@ module.exports = function override(config, env) {
             case "liamaws": localConfig = {
                 "websiteName": "Website Liam",
                 "colorclass": "color1",
+                "flow": "PKCE",
+                "responseType": "code",
+                "brokerUrl": "https://d2xgofpejqjfcr.cloudfront.net",
+                "clientId": "liamaws"
+            };
+                break;
+            case "clientliam": localConfig = {
+                "websiteName": "Liam Client 2",
+                "colorclass": "color2",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://d3aj1eqboorjif.cloudfront.net",
-                "clientId": "liamaws"
+                "brokerUrl": "https://d2xgofpejqjfcr.cloudfront.net",
+                "clientId": "clientliam"
             };
                 break;
             default:
@@ -85,7 +94,7 @@ module.exports = function override(config, env) {
             "colorclass": "color1",
             "flow": "Implicit",
             "responseType": "id_token",
-            "brokerUrl": "https://d3aj1eqboorjif.cloudfront.net",
+            "brokerUrl": "https://d2xgofpejqjfcr.cloudfront.net",
             "baseUrl": "https://localhost:3000",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"
         };
