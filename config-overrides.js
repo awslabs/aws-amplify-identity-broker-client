@@ -66,6 +66,24 @@ module.exports = function override(config, env) {
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
+            case "pprodthre": localConfig = {
+                "websiteName": "Preprod 3 PKCE",
+                "colorclass": "color3",
+                "flow": "PKCE",
+                "responseType": "code",
+                "brokerUrl": "https://preprod.dw8p5s05jola3.amplifyapp.com",
+                "clientId": "26f76e074423384a52a9e6f81dc2ed7a"
+            };
+                break;
+            case "pprodone": localConfig = {
+                "websiteName": "Preprod 1 Implicit",
+                "colorclass": "color1",
+                "flow": "Implicit",
+                "responseType": "id_token",
+                "brokerUrl": "https://preprod.dw8p5s05jola3.amplifyapp.com",
+                "clientId": "02d6789ef56270a6d6fcc063cf121b3b"
+            };
+                break;
             default:
                 console.error("Trying to build an unknown Amplify env config");
                 process.exit();
