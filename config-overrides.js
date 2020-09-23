@@ -71,7 +71,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color3",
                 "flow": "PKCE",
                 "responseType": "code",
-                "brokerUrl": "https://preprod.dw8p5s05jola3.amplifyapp.com",
+                "brokerUrl": "https://preprod.d35dwu2at8rhkc.amplifyapp.com",
                 "clientId": "26f76e074423384a52a9e6f81dc2ed7a"
             };
                 break;
@@ -80,7 +80,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "Implicit",
                 "responseType": "id_token",
-                "brokerUrl": "https://preprod.dw8p5s05jola3.amplifyapp.com",
+                "brokerUrl": "https://preprod.d35dwu2at8rhkc.amplifyapp.com",
                 "clientId": "02d6789ef56270a6d6fcc063cf121b3b"
             };
                 break;
