@@ -66,24 +66,6 @@ module.exports = function override(config, env) {
                 "clientId": "e91483525266cff1675e1c719999cc2b"
             };
                 break;
-            case "liamaws": localConfig = {
-                "websiteName": "Website Liam",
-                "colorclass": "color1",
-                "flow": "PKCE",
-                "responseType": "code",
-                "brokerUrl": "https://d2xgofpejqjfcr.cloudfront.net",
-                "clientId": "liamaws"
-            };
-                break;
-            case "clientliam": localConfig = {
-                "websiteName": "Liam Client 2",
-                "colorclass": "color2",
-                "flow": "Implicit",
-                "responseType": "id_token",
-                "brokerUrl": "https://d2xgofpejqjfcr.cloudfront.net",
-                "clientId": "clientliam"
-            };
-                break;
             default:
                 console.error("Trying to build an unknown Amplify env config");
                 process.exit();
