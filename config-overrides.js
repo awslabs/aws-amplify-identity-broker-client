@@ -97,8 +97,8 @@ module.exports = function override(config, env) {
         localConfig = {
             "websiteName": "Website Local",
             "colorclass": "color1",
-            "flow": "Implicit",
-            "responseType": "id_token",
+            "flow": "PKCE",
+            "responseType": "code",
             "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"
         };

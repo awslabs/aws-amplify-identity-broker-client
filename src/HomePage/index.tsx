@@ -9,31 +9,46 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Auth } from 'aws-amplify';
+import { Hub } from 'aws-amplify';
+import { BROADCAST_AUTH_CHANNEL, BROADCAST_EVENT } from "../AuthState";
 // THIS LINE HAS TO BE AT THE END OF IMPORTS:
 var Config = require("Config");
 
-type HomepageState = {
-    isLoggedIn: boolean
-}
-
-class HomePage extends React.Component<any, HomepageState> {
+class HomePage extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-
         this.state = {
-            isLoggedIn: false
-        }
+            isAuthenticated: false,
+            isLoadingAuthState: true,
+            user: null
+        };
+        Hub.listen(BROADCAST_AUTH_CHANNEL, this._handleAuthStateChange);
     }
 
     async componentDidMount() {
         this.props.history.replace('/');
-        this.setState({ isLoggedIn: (await Auth.currentUserInfo() !== undefined) });
+    }
+
+    _handleAuthStateChange = (hubCapsule: any) => {
+        switch (hubCapsule.payload.event) {
+            case BROADCAST_EVENT[BROADCAST_EVENT.LOADING]:
+                this.setState({isLoadingAuthState : true});
+                break;
+            case BROADCAST_EVENT[BROADCAST_EVENT.UPDATED]:
+                this.setState({
+                    isLoadingAuthState : false,
+                    isAuthenticated: hubCapsule.payload.data.isAuthenticated,
+                    user: hubCapsule.payload.data.user
+                });
+                break;
+            default:
+                break;
+        }
     }
 
     render() {
         let cssClass = "btn btn-primary btn-lg " + Config.colorclass;
-        if (this.state.isLoggedIn) {
+        if (this.state.isAuthenticated) {
             return (
                 <div className="jumbotron">
                     <h1 className="display-4">Congratulations!</h1>
