@@ -52,7 +52,7 @@ module.exports = function override(config, env) {
             };
                 break;
             case "pprodthre": localConfig = {
-                "websiteName": "Preprod 2 PKCE",
+                "websiteName": "Preprod 2",
                 "colorclass": "color2",
                 "flow": "PKCE",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
@@ -60,7 +60,7 @@ module.exports = function override(config, env) {
             };
                 break;
             case "pprodone": localConfig = {
-                "websiteName": "Preprod 1 Implicit",
+                "websiteName": "Preprod 1",
                 "colorclass": "color1",
                 "flow": "PKCE",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
