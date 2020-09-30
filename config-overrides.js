@@ -39,7 +39,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 1",
                 "colorclass": "color1",
                 "flow": "PKCE",
-                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
+                "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
@@ -47,7 +47,7 @@ module.exports = function override(config, env) {
                 "websiteName": "Website 2",
                 "colorclass": "color2",
                 "flow": "PKCE",
-                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
+                "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
