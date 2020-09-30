@@ -38,44 +38,23 @@ module.exports = function override(config, env) {
             case "clientone": localConfig = {
                 "websiteName": "Website 1",
                 "colorclass": "color1",
-                "flow": "Implicit",
-                "responseType": "id_token",
+                "flow": "PKCE",
                 "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "b732cd75872905da60bc202cdc157f22"
             };
                 break;
-            case "clienttwo": localConfig = {
+            case "clientthre": localConfig = {
                 "websiteName": "Website 2",
                 "colorclass": "color2",
-                "flow": "Implicit",
-                "responseType": "id_token",
-                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "8d5dc691a99f23a6a9b788d618871702"
-            };
-                break;
-            case "clientthre": localConfig = {
-                "websiteName": "Website 3",
-                "colorclass": "color3",
                 "flow": "PKCE",
-                "responseType": "code",
                 "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
                 "clientId": "3ff74008faf102ec0016f99fe311269a"
             };
                 break;
-            case "clientfour": localConfig = {
-                "websiteName": "Website 4",
-                "colorclass": "color4",
-                "flow": "PKCE",
-                "responseType": "code",
-                "brokerUrl": "https://master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "e91483525266cff1675e1c719999cc2b"
-            };
-                break;
             case "pprodthre": localConfig = {
-                "websiteName": "Preprod 3 PKCE",
-                "colorclass": "color3",
+                "websiteName": "Preprod 2 PKCE",
+                "colorclass": "color2",
                 "flow": "PKCE",
-                "responseType": "code",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
                 "clientId": "26f76e074423384a52a9e6f81dc2ed7a"
             };
@@ -83,8 +62,7 @@ module.exports = function override(config, env) {
             case "pprodone": localConfig = {
                 "websiteName": "Preprod 1 Implicit",
                 "colorclass": "color1",
-                "flow": "Implicit",
-                "responseType": "id_token",
+                "flow": "PKCE",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
                 "clientId": "02d6789ef56270a6d6fcc063cf121b3b"
             };
@@ -98,7 +76,6 @@ module.exports = function override(config, env) {
             "websiteName": "Website Local",
             "colorclass": "color1",
             "flow": "PKCE",
-            "responseType": "code",
             "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
             "clientId": "dev-a74f71067496caa729af7ffedf400504"
         };

@@ -12,19 +12,6 @@
       "AmplifyAppId": "d3e8af1dk93s4l"
     }
   },
-  "clienttwo": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-brokerpkceclient-clienttwo-121040-authRole",
-      "UnauthRoleArn": "arn:aws:iam::711171961718:role/amplify-brokerpkceclient-clienttwo-121040-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::711171961718:role/amplify-brokerpkceclient-clienttwo-121040-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-brokerpkceclient-clienttwo-121040-deployment",
-      "UnauthRoleName": "amplify-brokerpkceclient-clienttwo-121040-unauthRole",
-      "StackName": "amplify-brokerpkceclient-clienttwo-121040",
-      "StackId": "arn:aws:cloudformation:us-west-2:711171961718:stack/amplify-brokerpkceclient-clienttwo-121040/8bc9cfb0-c53c-11ea-997e-0a021606f2c4",
-      "AmplifyAppId": "d3e8af1dk93s4l"
-    }
-  },
   "clientthre": {
     "awscloudformation": {
       "AuthRoleName": "amplify-brokerpkceclient-clientthre-140526-authRole",
@@ -35,19 +22,6 @@
       "UnauthRoleName": "amplify-brokerpkceclient-clientthre-140526-unauthRole",
       "StackName": "amplify-brokerpkceclient-clientthre-140526",
       "StackId": "arn:aws:cloudformation:us-west-2:711171961718:stack/amplify-brokerpkceclient-clientthre-140526/3e532f00-c871-11ea-a59f-06bedd0f3972",
-      "AmplifyAppId": "d1tytm4h3ai9d2"
-    }
-  },
-  "clientfour": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-brokerpkceclient-clientfour-141435-authRole",
-      "UnauthRoleArn": "arn:aws:iam::711171961718:role/amplify-brokerpkceclient-clientfour-141435-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::711171961718:role/amplify-brokerpkceclient-clientfour-141435-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-brokerpkceclient-clientfour-141435-deployment",
-      "UnauthRoleName": "amplify-brokerpkceclient-clientfour-141435-unauthRole",
-      "StackName": "amplify-brokerpkceclient-clientfour-141435",
-      "StackId": "arn:aws:cloudformation:us-west-2:711171961718:stack/amplify-brokerpkceclient-clientfour-141435/85291330-c872-11ea-8275-024b5c27738c",
       "AmplifyAppId": "d1tytm4h3ai9d2"
     }
   },
