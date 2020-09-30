@@ -12,8 +12,28 @@ import Homepage from "./HomePage";
 import NavBar from "./NavBar";
 import { Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Hub, Auth } from 'aws-amplify';
 // THIS LINE HAS TO BE AT THE END OF IMPORTS:
 var Config = require("Config");
+
+// https://aws-amplify.github.io/docs/js/hub
+Hub.listen(/.*/, ({ channel, payload }) =>
+  console.debug(`[hub::${channel}::${payload.event}]`, payload)
+)
+var url = window.location.href.split("/");
+var domain = url[0] + "//" + url[2]
+
+Auth.configure({
+  userPoolId: "us-west-2_XXXXXXXXX", // This won't be used
+  userPoolWebClientId: Config.clientId,
+  oauth: {
+    domain: Config.brokerUrl,
+    scope: ['email', 'profile', 'openid'],
+    redirectSignIn: domain,
+    redirectSignOut: domain,
+    responseType: 'code',
+  },
+})
 
 type AppState = {
   text: string;

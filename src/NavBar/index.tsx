@@ -9,15 +9,41 @@
 
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import authClient from '../Auth';
+import { Auth } from 'aws-amplify';
 // THIS LINE HAS TO BE AT THE END OF IMPORTS:
 var Config = require("Config");
 
-class NavBar extends React.Component<any> {
+type NavBarState = {
+    isLoggedIn: boolean,
+    userInfo: any
+}
+
+class NavBar extends React.Component<any, NavBarState> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            isLoggedIn: false,
+            userInfo: undefined
+        }
+    }
+
     logout = () => {
-        authClient.logout();
+        Auth.signOut();
         this.props.history.replace('/');
+        this.setState({ isLoggedIn: false });
     };
+
+    async componentDidMount() {
+        this.props.history.replace('/');
+        let userInfo = await Auth.currentUserInfo();
+        console.log(userInfo);
+        if(userInfo !== null) {
+            this.setState({ isLoggedIn: true, userInfo: userInfo });
+        } else {
+            this.setState({ isLoggedIn: false, userInfo: undefined });
+        }
+    }
 
     render() {
         let cssClass = "navbar navbar-dark " + Config.colorclass + " fixed-top";
@@ -27,14 +53,14 @@ class NavBar extends React.Component<any> {
                     {Config.websiteName} - Sample {Config.flow} Client
       </Link>
                 {
-                    !authClient.isLoggedIn() &&
-                    < button className="btn btn-dark" onClick={() => { authClient.login() }}>Log In</button>
+                    !this.state.isLoggedIn &&
+                    < button className="btn btn-dark" onClick={() => { Auth.federatedSignIn() }}>Log In</button>
                 }
                 {
-                    authClient.isLoggedIn() &&
+                    this.state.isLoggedIn &&
                     < div >
-                        <label className="mr-2 text-white">You are logged in as: {authClient.getUserInfo().email}</label>
-                        <button className="btn btn-link" onClick={() => { authClient.login("/logout") }}>Switch User</button>&nbsp;&nbsp;
+                        <label className="mr-2 text-white">You are logged in as: { /*this.state.userInfo.email*/ }</label>
+                        <button className="btn btn-link" onClick={() => { Auth.federatedSignIn() }}>Switch User</button>&nbsp;&nbsp;
                         <button className="btn btn-dark" onClick={() => { this.logout() }}>Log Out</button>
                     </div >
                 }

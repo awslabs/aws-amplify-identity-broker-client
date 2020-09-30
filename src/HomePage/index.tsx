@@ -9,19 +9,31 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import authClient from '../Auth';
+import { Auth } from 'aws-amplify';
 // THIS LINE HAS TO BE AT THE END OF IMPORTS:
 var Config = require("Config");
 
-class HomePage extends React.Component<any> {
+type HomepageState = {
+    isLoggedIn: boolean
+}
+
+class HomePage extends React.Component<any, HomepageState> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            isLoggedIn: false
+        }
+    }
+
     async componentDidMount() {
-        await authClient.handleAuth();
         this.props.history.replace('/');
+        this.setState({ isLoggedIn: (await Auth.currentUserInfo() !== undefined) });
     }
 
     render() {
         let cssClass = "btn btn-primary btn-lg " + Config.colorclass;
-        if (authClient.isLoggedIn()) {
+        if (this.state.isLoggedIn) {
             return (
                 <div className="jumbotron">
                     <h1 className="display-4">Congratulations!</h1>

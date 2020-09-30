@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.1.1",
     "@types/jwt-decode": "^2.2.1",
     "@types/react-helmet": "^6.1.0",
+    "aws-amplify": "^3.3.2",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

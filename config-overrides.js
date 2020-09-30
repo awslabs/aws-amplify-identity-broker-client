@@ -19,7 +19,12 @@ if (!fs.existsSync("./amplify/backend/amplify-meta.json")) {
     amplifyMeta = require("./amplify/backend/amplify-meta.json");
 }
 const REGEX = /.*-(\w+)/;
-const AMPLIFY_ENV = amplifyMeta.hosting.S3AndCloudFront.output.HostingBucketName.match(REGEX)[1];
+let AMPLIFY_ENV = "";
+if (amplifyMeta.hosting.S3AndCloudFront.output && amplifyMeta.hosting.S3AndCloudFront.output.HostingBucketName) {
+    AMPLIFY_ENV = amplifyMeta.hosting.S3AndCloudFront.output.HostingBucketName.match(REGEX)[1];
+} else {
+    console.log("Not able to find Amplify env. Use local dev settings");
+}
 
 console.log("Injecting config");
 console.log("AMPLIFY_ENV is " + AMPLIFY_ENV);
