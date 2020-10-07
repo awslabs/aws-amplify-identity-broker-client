@@ -56,7 +56,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color2",
                 "flow": "PKCE",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
-                "clientId": "26f76e074423384a52a9e6f81dc2ed7a"
+                "clientId": "5baiv9tcsk25b6un85ln51jeri"
             };
                 break;
             case "pprodone": localConfig = {
@@ -64,7 +64,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "PKCE",
                 "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
-                "clientId": "02d6789ef56270a6d6fcc063cf121b3b"
+                "clientId": "vou3a4epvi0edpnfr2528a0kl"
             };
                 break;
             default:
