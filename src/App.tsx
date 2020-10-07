@@ -35,19 +35,33 @@ Auth.configure({
 
 
 
-class App extends React.Component<any> {
+class App extends React.Component<any, any> {
 
   constructor(props: any) {
     super(props);
     Hub.listen("auth", this._handleAuthStateChange);
+
+    //Extract confirmationCode value (or undefined)
+    var captured = /autologin=([^&]+)/.exec(window.location.href);
+    var autologin = captured ? captured[1] : false;
+
+    this.state = { autologin: autologin };
   }
 
 
   async componentDidMount() {
-    this._handleAuthStateChange({event: "init"});
+    const authState: AuthState = await this._handleAuthStateChange({event: "init"});
+    if (this.state.autologin && !authState.isAuthenticated) {
+      // We are not authenticated and have been ask to autologin, initiate PKCE flow
+      Auth.federatedSignIn();
+    }
   }
 
-  async _handleAuthStateChange(payload: any){
+  async _handleAuthStateChange(payload: any): Promise<AuthState> {
+    let authState: AuthState = {
+      isAuthenticated: false,
+      user: null,
+    };
     switch (payload.event) {
       case "configured":
       case "signIn":
@@ -57,22 +71,17 @@ class App extends React.Component<any> {
         Hub.dispatch(BROADCAST_AUTH_CHANNEL, { event: BROADCAST_EVENT[BROADCAST_EVENT.LOADING], message: "key" } );
         try{
           const user: CognitoUser = await Auth.currentAuthenticatedUser();
-          const authState: AuthState = {
-            isAuthenticated: this._isAuthenticated(user),
-            user: user,
-          };
-          Hub.dispatch(BROADCAST_AUTH_CHANNEL, { event: BROADCAST_EVENT[BROADCAST_EVENT.UPDATED], data: authState, message: "key" } );
+          authState.isAuthenticated = this._isAuthenticated(user);
+          authState.user = user;
         } catch(err) {
-          const authState: AuthState = {
-            isAuthenticated: false,
-            user: null,
-          };
-          Hub.dispatch(BROADCAST_AUTH_CHANNEL, { event: BROADCAST_EVENT[BROADCAST_EVENT.UPDATED], data: authState, message: "key" } );
+          console.error("Cannot check token validity");
         }
+        Hub.dispatch(BROADCAST_AUTH_CHANNEL, { event: BROADCAST_EVENT[BROADCAST_EVENT.UPDATED], data: authState, message: "key" } );
         break;
       default:
         break;
     }
+    return authState;
   }
 
   _isAuthenticated(user: CognitoUser) {
