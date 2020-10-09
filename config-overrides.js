@@ -40,7 +40,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color1",
                 "flow": "PKCE",
                 "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "b732cd75872905da60bc202cdc157f22"
+                "clientId": "4qtiagdchisgthefmoi045kd4b"
             };
                 break;
             case "clientthre": localConfig = {
@@ -48,7 +48,7 @@ module.exports = function override(config, env) {
                 "colorclass": "color2",
                 "flow": "PKCE",
                 "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "3ff74008faf102ec0016f99fe311269a"
+                "clientId": "3n4q7a6h9kq6u99614bqjmgil1"
             };
                 break;
             case "pprodthre": localConfig = {
