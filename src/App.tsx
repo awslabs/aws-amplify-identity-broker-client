@@ -74,7 +74,7 @@ class App extends React.Component<any, any> {
           authState.isAuthenticated = this._isAuthenticated(user);
           authState.user = user;
         } catch(err) {
-          console.error("Cannot check token validity");
+          // There is no session
         }
         Hub.dispatch(BROADCAST_AUTH_CHANNEL, { event: BROADCAST_EVENT[BROADCAST_EVENT.UPDATED], data: authState, message: "key" } );
         break;
