@@ -4,13 +4,13 @@
   "description": "Example client website for aws-amplify-identity-broker",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.0.4",
     "@testing-library/user-event": "^12.1.7",
     "@types/jwt-decode": "^2.2.1",
     "@types/react-helmet": "^6.1.0",
     "aws-amplify": "^3.3.3",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
@@ -37,10 +37,10 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^14.11.5",
+    "@types/node": "^14.14.20",
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.6",
+    "@types/react-router-dom": "^5.1.7",
     "react-app-rewired": "^2.1.6",
     "typescript": "^4.1.3"
   }
