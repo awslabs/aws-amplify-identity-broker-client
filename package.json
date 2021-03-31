@@ -6,7 +6,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^13.0.16",
+    "@testing-library/user-event": "^13.1.1",
     "@types/react-helmet": "^6.1.0",
     "aws-amplify": "^3.3.26",
     "react": "^17.0.1",
