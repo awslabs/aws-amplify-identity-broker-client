@@ -37,3 +37,6 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
+.vscode/dryrun.log
+.vscode/configurationCache.log
+.vscode/targets.log
