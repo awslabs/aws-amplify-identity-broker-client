@@ -1,101 +1,114 @@
 {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Hosting resource stack creation using Amplify CLI",
-    "Parameters": {
+    "awstemplateformatversion": "2010-09-09",
+    "description": "hosting resource stack creation using amplify cli",
+    "parameters": {
         "env": {
-            "Type": "String"
+            "type": "string"
         },
-        "bucketName": {
-            "Type": "String"
+        "bucketname": {
+            "type": "string"
         }
     },
-    "Conditions": {
-        "ShouldNotCreateEnvResources": {
-            "Fn::Equals": [
+    "conditions": {
+        "shouldnotcreateenvresources": {
+            "fn::equals": [
                 {
-                    "Ref": "env"
+                    "ref": "env"
                 },
-                "NONE"
+                "none"
             ]
         }
     },
-    "Resources": {
-        "S3Bucket": {
-            "Type": "AWS::S3::Bucket",
-            "DeletionPolicy": "Retain",
-            "Properties": {
-                "BucketName": {
-                    "Fn::If": [
-                        "ShouldNotCreateEnvResources",
+    "resources": {
+        "s3bucket": {
+            "type": "aws::s3::bucket",
+            "deletionpolicy": "retain",
+            "properties": {
+                "bucketencryption": {
+                    "serversideencryptionconfiguration": [
                         {
-                            "Ref": "bucketName"
+                            "serversideencryptionbydefault": {
+                                "ssealgorithm": "aws:kms",
+                                "kmsmasterkeyid": "kms-key-arn"
+                            }
+                        }
+                    ]
+                },
+                "VersioningConfiguration" : {
+                    "Status" : "Enabled"
+                },
+                "bucketname": {
+                    "fn::if": [
+                        "shouldnotcreateenvresources",
+                        {
+                            "ref": "bucketname"
                         },
                         {
-                            "Fn::Join": [
+                            "fn::join": [
                                 "",
                                 [
                                     {
-                                        "Ref": "bucketName"
+                                        "ref": "bucketname"
                                     },
                                     "-",
                                     {
-                                        "Ref": "env"
+                                        "ref": "env"
                                     }
                                 ]
                             ]
                         }
                     ]
                 },
-                "WebsiteConfiguration": {
-                    "IndexDocument": "index.html",
-                    "ErrorDocument": "index.html"
+                "websiteconfiguration": {
+                    "indexdocument": "index.html",
+                    "errordocument": "index.html"
                 },
-                "CorsConfiguration": {
-                    "CorsRules": [
+                "corsconfiguration": {
+                    "corsrules": [
                         {
-                            "AllowedHeaders": [
-                                "Authorization",
-                                "Content-Length"
+                            "allowedheaders": [
+                                "authorization",
+                                "content-length"
                             ],
-                            "AllowedMethods": [
-                                "GET"
+                            "allowedmethods": [
+                                "get"
                             ],
-                            "AllowedOrigins": [
+                            "allowedorigins": [
                                 "*"
                             ],
-                            "MaxAge": 3000
+                            "maxage": 3000
                         }
                     ]
                 }
             }
         },
-        "PrivateBucketPolicy": {
-            "Type": "AWS::S3::BucketPolicy",
-            "DependsOn": "OriginAccessIdentity",
-            "Properties": {
-                "PolicyDocument": {
-                    "Id": "MyPolicy",
-                    "Version": "2012-10-17",
-                    "Statement": [
+        "privatebucketpolicy": {
+            "type": "aws::s3::bucketpolicy",
+            "dependson": "originaccessidentity",
+            "properties": {
+                "policydocument": {
+                    "id": "mypolicy",
+                    "version": "2012-10-17",
+                    "statement": [
                         {
-                            "Sid": "APIReadForGetBucketObjects",
-                            "Effect": "Allow",
-                            "Principal": {
-                                "CanonicalUser": {
-                                    "Fn::GetAtt": [
-                                        "OriginAccessIdentity",
-                                        "S3CanonicalUserId"
+                            "sid": "apireadforgetbucketobjects",
+                            "effect": "allow",
+                            "principal": {
+                                "canonicaluser": {
+                                    "fn::getatt": [
+                                        "originaccessidentity",
+                                        "s3canonicaluserid"
                                     ]
                                 }
                             },
-                            "Action": "s3:GetObject",
-                            "Resource": {
-                                "Fn::Join": [
+                            "action": "s3:getobject",
+                            "resource": {
+                                "fn::join": [
                                     "",
                                     [
                                         "arn:aws:s3:::",
                                         {
-                                            "Ref": "S3Bucket"
+                                            "ref": "s3bucket"
                                         },
                                         "/*"
                                     ]
@@ -104,44 +117,44 @@
                         }
                     ]
                 },
-                "Bucket": {
-                    "Ref": "S3Bucket"
+                "bucket": {
+                    "ref": "s3bucket"
                 }
             }
         },
-        "OriginAccessIdentity": {
-            "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
-            "Properties": {
-                "CloudFrontOriginAccessIdentityConfig": {
-                    "Comment": "CloudFrontOriginAccessIdentityConfig"
+        "originaccessidentity": {
+            "type": "aws::cloudfront::cloudfrontoriginaccessidentity",
+            "properties": {
+                "cloudfrontoriginaccessidentityconfig": {
+                    "comment": "cloudfrontoriginaccessidentityconfig"
                 }
             }
         },
-        "CloudFrontDistribution": {
-            "Type": "AWS::CloudFront::Distribution",
-            "DependsOn": [
-                "S3Bucket",
-                "OriginAccessIdentity"
+        "cloudfrontdistribution": {
+            "type": "aws::cloudfront::distribution",
+            "dependson": [
+                "s3bucket",
+                "originaccessidentity"
             ],
-            "Properties": {
-                "DistributionConfig": {
-                    "Origins": [
+            "properties": {
+                "distributionconfig": {
+                    "origins": [
                         {
-                            "DomainName": {
-                                "Fn::GetAtt": [
-                                    "S3Bucket",
-                                    "DomainName"
+                            "domainname": {
+                                "fn::getatt": [
+                                    "s3bucket",
+                                    "domainname"
                                 ]
                             },
-                            "Id": "hostingS3Bucket",
-                            "S3OriginConfig": {
-                                "OriginAccessIdentity": {
-                                    "Fn::Join": [
+                            "id": "hostings3bucket",
+                            "s3originconfig": {
+                                "originaccessidentity": {
+                                    "fn::join": [
                                         "",
                                         [
                                             "origin-access-identity/cloudfront/",
                                             {
-                                                "Ref": "OriginAccessIdentity"
+                                                "ref": "originaccessidentity"
                                             }
                                         ]
                                     ]
@@ -149,122 +162,122 @@
                             }
                         }
                     ],
-                    "Enabled": "true",
-                    "DefaultCacheBehavior": {
-                        "AllowedMethods": [
-                            "DELETE",
-                            "GET",
-                            "HEAD",
-                            "OPTIONS",
-                            "PATCH",
-                            "POST",
-                            "PUT"
+                    "enabled": "true",
+                    "defaultcachebehavior": {
+                        "allowedmethods": [
+                            "delete",
+                            "get",
+                            "head",
+                            "options",
+                            "patch",
+                            "post",
+                            "put"
                         ],
-                        "TargetOriginId": "hostingS3Bucket",
-                        "ForwardedValues": {
-                            "QueryString": "false"
+                        "targetoriginid": "hostings3bucket",
+                        "forwardedvalues": {
+                            "querystring": "false"
                         },
-                        "ViewerProtocolPolicy": "redirect-to-https",
-                        "DefaultTTL": 86400,
-                        "MaxTTL": 31536000,
-                        "MinTTL": 60,
-                        "Compress": true
+                        "viewerprotocolpolicy": "redirect-to-https",
+                        "defaultttl": 86400,
+                        "maxttl": 31536000,
+                        "minttl": 60,
+                        "compress": true
                     },
-                    "DefaultRootObject": "index.html",
-                    "CustomErrorResponses": [
+                    "defaultrootobject": "index.html",
+                    "customerrorresponses": [
                         {
-                            "ErrorCachingMinTTL": 300,
-                            "ErrorCode": 400,
-                            "ResponseCode": 200,
-                            "ResponsePagePath": "/"
+                            "errorcachingminttl": 300,
+                            "errorcode": 400,
+                            "responsecode": 200,
+                            "responsepagepath": "/"
                         },
                         {
-                            "ErrorCachingMinTTL": 300,
-                            "ErrorCode": 403,
-                            "ResponseCode": 200,
-                            "ResponsePagePath": "/"
+                            "errorcachingminttl": 300,
+                            "errorcode": 403,
+                            "responsecode": 200,
+                            "responsepagepath": "/"
                         },
                         {
-                            "ErrorCachingMinTTL": 300,
-                            "ErrorCode": 404,
-                            "ResponseCode": 200,
-                            "ResponsePagePath": "/"
+                            "errorcachingminttl": 300,
+                            "errorcode": 404,
+                            "responsecode": 200,
+                            "responsepagepath": "/"
                         }
                     ]
                 }
             }
         }
     },
-    "Outputs": {
-        "Region": {
-            "Value": {
-                "Ref": "AWS::Region"
+    "outputs": {
+        "region": {
+            "value": {
+                "ref": "aws::region"
             }
         },
-        "HostingBucketName": {
-            "Description": "Hosting bucket name",
-            "Value": {
-                "Ref": "S3Bucket"
+        "hostingbucketname": {
+            "description": "hosting bucket name",
+            "value": {
+                "ref": "s3bucket"
             }
         },
-        "WebsiteURL": {
-            "Value": {
-                "Fn::GetAtt": [
-                    "S3Bucket",
-                    "WebsiteURL"
+        "websiteurl": {
+            "value": {
+                "fn::getatt": [
+                    "s3bucket",
+                    "websiteurl"
                 ]
             },
-            "Description": "URL for website hosted on S3"
+            "description": "url for website hosted on s3"
         },
-        "S3BucketSecureURL": {
-            "Value": {
-                "Fn::Join": [
+        "s3bucketsecureurl": {
+            "value": {
+                "fn::join": [
                     "",
                     [
                         "https://",
                         {
-                            "Fn::GetAtt": [
-                                "S3Bucket",
-                                "DomainName"
+                            "fn::getatt": [
+                                "s3bucket",
+                                "domainname"
                             ]
                         }
                     ]
                 ]
             },
-            "Description": "Name of S3 bucket to hold website content"
+            "description": "name of s3 bucket to hold website content"
         },
-        "CloudFrontDistributionID": {
-            "Value": {
-                "Ref": "CloudFrontDistribution"
+        "cloudfrontdistributionid": {
+            "value": {
+                "ref": "cloudfrontdistribution"
             }
         },
-        "CloudFrontDomainName": {
-            "Value": {
-                "Fn::GetAtt": [
-                    "CloudFrontDistribution",
-                    "DomainName"
+        "cloudfrontdomainname": {
+            "value": {
+                "fn::getatt": [
+                    "cloudfrontdistribution",
+                    "domainname"
                 ]
             }
         },
-        "CloudFrontSecureURL": {
-            "Value": {
-                "Fn::Join": [
+        "cloudfrontsecureurl": {
+            "value": {
+                "fn::join": [
                     "",
                     [
                         "https://",
                         {
-                            "Fn::GetAtt": [
-                                "CloudFrontDistribution",
-                                "DomainName"
+                            "fn::getatt": [
+                                "cloudfrontdistribution",
+                                "domainname"
                             ]
                         }
                     ]
                 ]
             }
         },
-        "CloudFrontOriginAccessIdentity": {
-            "Value": {
-                "Ref": "OriginAccessIdentity"
+        "cloudfrontoriginaccessidentity": {
+            "value": {
+                "ref": "originaccessidentity"
             }
         }
     }
