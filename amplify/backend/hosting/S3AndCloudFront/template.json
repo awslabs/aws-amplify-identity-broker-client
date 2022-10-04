@@ -137,6 +137,7 @@
       ],
       "Properties": {
         "DistributionConfig": {
+          "HttpVersion": "http2",
           "Origins": [
             {
               "DomainName": {
