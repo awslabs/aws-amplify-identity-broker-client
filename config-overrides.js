@@ -35,36 +35,36 @@ module.exports = function override(config, env) {
     if (env !== "development") {
         console.log("This is an AWS build");
         switch (AMPLIFY_ENV) {
-            case "clientone": localConfig = {
+            case "prodone": localConfig = {
                 "websiteName": "Website 1",
                 "colorclass": "color1",
                 "flow": "PKCE",
-                "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "4qtiagdchisgthefmoi045kd4b"
+                "brokerUrl": "master.d19evjq5d10l2l.amplifyapp.com",
+                "clientId": "60iaql2shcc50q9t4alljvrjmh"
             };
                 break;
-            case "clientthre": localConfig = {
+            case "prodtwo": localConfig = {
                 "websiteName": "Website 2",
                 "colorclass": "color2",
                 "flow": "PKCE",
-                "brokerUrl": "master.dw8p5s05jola3.amplifyapp.com",
-                "clientId": "3n4q7a6h9kq6u99614bqjmgil1"
+                "brokerUrl": "master.d19evjq5d10l2l.amplifyapp.com",
+                "clientId": "6fa2fleunii11gq1t804hg6tio"
             };
                 break;
-            case "pprodthre": localConfig = {
-                "websiteName": "Preprod 2",
-                "colorclass": "color2",
-                "flow": "PKCE",
-                "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
-                "clientId": "77hq5ssfckom19ss6ejadleomf"
-            };
-                break;
-            case "pprodone": localConfig = {
-                "websiteName": "Preprod 1",
+            case "devone": localConfig = {
+                "websiteName": "Website 1 (Dev)",
                 "colorclass": "color1",
                 "flow": "PKCE",
-                "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
-                "clientId": "25dn9bp091cjpvbk47t769rmlc"
+                "brokerUrl": "dev.d19evjq5d10l2l.amplifyapp.com",
+                "clientId": "61ksp5cgn88426mftft0bgjrfd"
+            };
+                break;
+            case "devtwo": localConfig = {
+                "websiteName": "Website 2 (Dev)",
+                "colorclass": "color2",
+                "flow": "PKCE",
+                "brokerUrl": "dev.d19evjq5d10l2l.amplifyapp.com",
+                "clientId": "1qvvl6e8qv2tjmv8bknragmn7u"
             };
                 break;
             default:
@@ -76,8 +76,8 @@ module.exports = function override(config, env) {
             "websiteName": "Website Local",
             "colorclass": "color1",
             "flow": "PKCE",
-            "brokerUrl": "preprod.d35dwu2at8rhkc.amplifyapp.com",
-            "clientId": "dev-a74f71067496caa729af7ffedf400504"
+            "brokerUrl": "dev.d19evjq5d10l2l.amplifyapp.com",
+            "clientId": "3oqqr30qatsop1uobbv74a6civ"
         };
     }
 
