@@ -8,8 +8,12 @@ This example is using [AWS Amplify for Javascript](https://github.com/aws-amplif
 
 This repository has 2 running live demos:
 
-* Website 1 : https://master.dv7odw7xb73ou.amplifyapp.com 
-* Website 2 : https://master.dgt79y8acfq6b.amplifyapp.com 
+* Website 1 : https://main.d3865c3iw67420.amplifyapp.com
+* Website 2 : https://main.dannbzwwbj1rp.amplifyapp.com
+
+## How to deploy
+
+Click [here](Documentation/UserDocumentation.md) for details.
 
 ## How to write a client
 

@@ -22,7 +22,7 @@ var url = window.location.href.split("/");
 var domain = url[0] + "//" + url[2]
 
 Auth.configure({
-  userPoolId: "us-west-2_XXXXXXXXX", // This won"t be used
+  userPoolId: "us-west-2_XXXXXXXXX", // This won"t be used but region should be correct
   userPoolWebClientId: Config.clientId,
   oauth: {
     domain: Config.brokerUrl,
