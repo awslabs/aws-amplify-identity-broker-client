@@ -11,6 +11,10 @@ This repository has 2 running live demos:
 * Website 1 : https://main.d3865c3iw67420.amplifyapp.com
 * Website 2 : https://main.dannbzwwbj1rp.amplifyapp.com
 
+## How to deploy
+
+Click [here](Documentation/UserDocumentation.md) for details.
+
 ## How to write a client
 
 In addition to the current repository you can find all the documentation needed to create a client application or website [here](https://github.com/awslabs/aws-amplify-identity-broker/blob/master/Documentation/ClientDeveloperDocumentation.md)
