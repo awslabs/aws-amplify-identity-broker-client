@@ -4,7 +4,7 @@
   "description": "Example client website for aws-amplify-identity-broker",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
     "@types/react-helmet": "^6.1.1",
